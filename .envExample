@@ -1,0 +1,7 @@
+MONGO_URI = "mongodb+srv://brayanmeneses:brayanmeneses@geapp.wdtnmmt.mongodb.net/geappDB?retryWrites=true&w=majority"
+NODE_ENV = "development"
+JWT_SECRET= "geap123456789"
+EMAIL_HOST= "smtp.office365.com"
+EMAIL_USER= "geapp-2023@outlook.com"
+EMAIL_PASS= "G34pp2023*"
+FRONTEND_URL= "http://localhost:3000"
