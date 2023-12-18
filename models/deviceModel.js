@@ -59,7 +59,6 @@ const deviceSchema = new mongoose.Schema(
     },
     almacenamientoTipo: {
       type: String,
-      required: [true, "Por favor selecciona uno de la lista."],
       enum: ["HDD", "SSD", "N/A"],
     },
     ramCapacidadGB: {
@@ -81,7 +80,6 @@ const deviceSchema = new mongoose.Schema(
     graficaTipo: {
       type: String,
       enum: ["Integrada", "Dedicada", "N/A"],
-      required: [ true, "Tipo de grafica no válida. Selecciona una de la lista."],
     },
     graficaModelo: {
       type: String,

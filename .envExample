@@ -1,4 +1,4 @@
-MONGO_URI = "mongodb+srv://brayanmeneses:brayanmeneses@geapp.wdtnmmt.mongodb.net/geappDB?retryWrites=true&w=majority"
+MONGO_URI = "mongodb+srv://brayanmeneses:brayanmeneses@geapp.gf9txhy.mongodb.net/geappDB?retryWrites=true&w=majority"
 NODE_ENV = "development"
 JWT_SECRET= "geap123456789"
 EMAIL_HOST= "smtp.office365.com"

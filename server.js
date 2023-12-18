@@ -36,7 +36,7 @@ app.get("/", (req, res) => {
     res.send("Home Page")
 })
 app.get("/api", (req, res) => {
-    res.send("Welcome to API")
+    res.send("Welcome to GEAPP-API")
 })
 //Error Middleware
 app.use(errorHandler)
