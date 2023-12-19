@@ -134,6 +134,16 @@ const createDevice = asyncHandler(async (req, res) => {
 
 //Get all Devices
 
+
+const getDevices = asyncHandler(async (req, res) => {
+  const devices = await Device.find().sort("tipoEquipo");
+  res.status(200).json(devices);
+});
+
+/**
+ 
+
+
 const getDevices = asyncHandler(async (req, res) => {
   const page = parseInt(req.query.page) || 1; // Actual page
   const pageSize = parseInt(req.query.pageSize) || 10; // Number of users per page
@@ -256,6 +266,9 @@ const getDevices = asyncHandler(async (req, res) => {
     throw new Error("No se encontraron dispositivos");
   }
 });
+
+
+ */
 
 //Get single Device
 const getDevice = asyncHandler(async (req, res) => {
