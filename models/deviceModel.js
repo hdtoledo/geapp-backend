@@ -4,13 +4,12 @@ const deviceSchema = new mongoose.Schema(
   {
     tipoEquipo: {
       type: String,
-      required: [true, "Por favor selecciona uno de la lista."],
       enum: ["Computador de Escritorio", "Portatil", "Impresora"],
     },
     dependencia: {
       type: String,
-      required: [true, "Por favor digita la dependencia"],
       trim: true,
+      default: "N/A"
     },
     codigoInterno: {
       type: String,
@@ -19,34 +18,36 @@ const deviceSchema = new mongoose.Schema(
     },
     marcaEquipo: {
       type: String,
-      required: [true, "Por favor Digita una marca."],
       trim: true,
+      default: "N/A"
     },
     modeloEquipo: {
       type: String,
-      required: [true, "Por favor Digita un modelo."],
       trim: true,
+      default: "N/A"
     },
     serieSN: {
       type: String,
-      required: [true, "Por favor Digita un numero de serie."],
       trim: true,
+      default: "N/A"
     },
     fechaCompra: {
-      type: Date,
-      default: null
+      type: String,
+      default: "N/A"
     },
-    imagen: { 
+    image: { 
       type: Object,
       default: {}
     },
     observaciones: {
       type: String,
       maxlength: [500, "Las observaciones no pueden tener más de 500 caracteres."],
+      default: "N/A"
     },
     procesadorMarca: {
       type: String,
       trim: true,
+      default: "N/A"
     },
     procesadormodelo: {
       type: String,
@@ -54,19 +55,20 @@ const deviceSchema = new mongoose.Schema(
       default: "N/A"
     },
     almacenamientoCapacidadGb: {
-      type: Number,
+      type: String,
       default: "N/A"
     },
     almacenamientoTipo: {
       type: String,
       enum: ["HDD", "SSD", "N/A"],
+      default: "N/A"
     },
     ramCapacidadGB: {
-      type: Number,
+      type: String,
       default: "N/A"
     },
     ramFrecuenciaMHz: {
-      type: Number,
+      type: String,
       default: "N/A"
     },
     ramTecnologia: {
@@ -80,6 +82,7 @@ const deviceSchema = new mongoose.Schema(
     graficaTipo: {
       type: String,
       enum: ["Integrada", "Dedicada", "N/A"],
+      default: "N/A"
     },
     graficaModelo: {
       type: String,
@@ -89,7 +92,7 @@ const deviceSchema = new mongoose.Schema(
     fuentePoderTiene: {
       type: String,
       enum: ["Si", "No", "N/A"],
-      required: [true, "Por favor selecciona Si/No de la lista."],
+      default: "N/A",
     },
     fuentePoderTipo: {
       type: String,
@@ -113,61 +116,66 @@ const deviceSchema = new mongoose.Schema(
     chasisTiene: {
       type: String,
       enum: ["Si", "No", "N/A"],
-      required: [true, "Por favor selecciona Si/No de la lista."],
+      default: "N/A",
     },
     chasisTamano: {
       type: String,
       trim: true,
+      default: "N/A",
     },
     puertos: {
       type: String,
-      required: [true, "Por favor ingresa un listado de puertos."],
+      default: "N/A",
     },
     pantallaTiene: {
       type: String,
       enum: ["Si", "No", "N/A"],
-      required: [true, "Por favor selecciona Si/No de la lista."],
+      default: "N/A",
     },
     pantallaFuncional: {
       type: String,
       enum: ["Si", "No", "N/A"],
-      required: [true, "Por favor selecciona Si/No de la lista."],
+      default: "N/A",
     },
     pantallaMarca: {
       type: String,
       trim: true,
+      default: "N/A",
     },
     pantallaModelo: {
       type: String,
       trim: true,
+      default: "N/A",
     },
     tecladoTiene: {
       type: String,
       enum: ["Si", "No", "N/A"],
-      required: [true, "Por favor selecciona Si/No de la lista."],
+      default: "N/A",
     },
     tecladoFuncional: {
       type: String,
       enum: ["Si", "No", "N/A"],
-      required: [true, "Por favor selecciona Si/No de la lista."],
+      default: "N/A",
     },
     tecladoMarca: {
       type: String,
       trim: true,
+      default: "N/A",
     },
     tecladoModelo: {
       type: String,
       trim: true,
+      default: "N/A",
     },
     mouseTiene: {
       type: String,
       enum: ["Si", "No", "N/A"],
-      required: [true, "Por favor selecciona Si/No de la lista."],
+      default: "N/A",
     },
     mouseFuncional: {
       type: String,
       enum: ["Si", "No", "N/A"],
-      required: [true, "Por favor selecciona Si/No de la lista."],
+      default: "N/A",
     },
     mouseMarca: {
       type: String,

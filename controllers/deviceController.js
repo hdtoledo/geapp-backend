@@ -57,7 +57,7 @@ const createDevice = asyncHandler(async (req, res) => {
     officeFechaCaducidad,
     antivirusNombre,
     antivirusFechaCaducidad,
-    imagen,
+    image,
   } = req.body;
 
   // Validation Fields
@@ -110,7 +110,7 @@ const createDevice = asyncHandler(async (req, res) => {
       fileType: req.file.mimetype,
       fileSize: fileSizeFormatter(req.file.size, 2),
     };
-    req.body.imagen = fileData;
+    req.body.image = fileData;
   }
 
   try {
@@ -139,136 +139,6 @@ const getDevices = asyncHandler(async (req, res) => {
   const devices = await Device.find().sort("tipoEquipo");
   res.status(200).json(devices);
 });
-
-/**
- 
-
-
-const getDevices = asyncHandler(async (req, res) => {
-  const page = parseInt(req.query.page) || 1; // Actual page
-  const pageSize = parseInt(req.query.pageSize) || 10; // Number of users per page
-
-  const totalDevices = await Device.countDocuments();
-  const totalPages = Math.ceil(totalDevices / pageSize);
-
-  const devices = await Device.find()
-    .skip((page - 1) * pageSize)
-    .limit(pageSize);
-
-  if (devices && devices.length > 0) {
-    const devicesData = devices.map((device) => {
-      const {
-        _id,
-        tipoEquipo,
-        dependencia,
-        codigoInterno,
-        marcaEquipo,
-        modeloEquipo,
-        serieSN,
-        fechaCompra,
-        observaciones,
-        procesadorMarca,
-        procesadormodelo,
-        almacenamientoCapacidadGb,
-        almacenamientoTipo,
-        ramCapacidadGB,
-        ramFrecuenciaMHz,
-        ramTecnologia,
-        ramFactorForma,
-        graficaTipo,
-        graficaModelo,
-        fuentePoderTiene,
-        fuentePoderTipo,
-        tarjetaMadreMarca,
-        tarjetaMadreModelo,
-        tarjetaMadreTamano,
-        chasisTiene,
-        chasisTamano,
-        puertos,
-        pantallaTiene,
-        pantallaFuncional,
-        pantallaMarca,
-        pantallaModelo,
-        tecladoTiene,
-        tecladoFuncional,
-        tecladoMarca,
-        tecladoModelo,
-        mouseTiene,
-        mouseFuncional,
-        mouseMarca,
-        mouseModelo,
-        oSVersion,
-        oSFechaCaducidad,
-        officeVersion,
-        officeFechaCaducidad,
-        antivirusNombre,
-        antivirusFechaCaducidad,
-        imagen,
-      } = device;
-
-      return {
-        _id,
-        tipoEquipo,
-        dependencia,
-        codigoInterno,
-        marcaEquipo,
-        modeloEquipo,
-        serieSN,
-        fechaCompra,
-        observaciones,
-        procesadorMarca,
-        procesadormodelo,
-        almacenamientoCapacidadGb,
-        almacenamientoTipo,
-        ramCapacidadGB,
-        ramFrecuenciaMHz,
-        ramTecnologia,
-        ramFactorForma,
-        graficaTipo,
-        graficaModelo,
-        fuentePoderTiene,
-        fuentePoderTipo,
-        tarjetaMadreMarca,
-        tarjetaMadreModelo,
-        tarjetaMadreTamano,
-        chasisTiene,
-        chasisTamano,
-        puertos,
-        pantallaTiene,
-        pantallaFuncional,
-        pantallaMarca,
-        pantallaModelo,
-        tecladoTiene,
-        tecladoFuncional,
-        tecladoMarca,
-        tecladoModelo,
-        mouseTiene,
-        mouseFuncional,
-        mouseMarca,
-        mouseModelo,
-        oSVersion,
-        oSFechaCaducidad,
-        officeVersion,
-        officeFechaCaducidad,
-        antivirusNombre,
-        antivirusFechaCaducidad,
-        imagen,
-      };
-    });
-
-    res.status(200).json({
-      devices: devicesData,
-      totalPages,
-      currentPage: page,
-    });
-  } else {
-    res.status(404);
-    throw new Error("No se encontraron dispositivos");
-  }
-});
-
-
- */
 
 //Get single Device
 const getDevice = asyncHandler(async (req, res) => {
@@ -352,7 +222,7 @@ const updateDevice = asyncHandler(async (req, res) => {
     officeFechaCaducidad,
     antivirusNombre,
     antivirusFechaCaducidad,
-    imagen,
+    image,
   } = req.body;
 
   try {
@@ -415,7 +285,7 @@ const updateDevice = asyncHandler(async (req, res) => {
     if (antivirusNombre) existingDevice.antivirusNombre = antivirusNombre;
     if (antivirusFechaCaducidad)
       existingDevice.antivirusFechaCaducidad = antivirusFechaCaducidad;
-    if (imagen) existingDevice.imagen = imagen;
+    if (image) existingDevice.image = image;
 
     // Handle Image Upload
     if (req.file) {
